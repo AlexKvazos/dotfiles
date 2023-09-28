@@ -55,6 +55,9 @@ alias vim='nvim'
 alias ni='npm install'
 alias na='npm add'
 
+# shadcn/ui
+alias scn='npx shadcn-ui@latest add'
+
 ### ---- antigen --------------------------------------------
 
 # source antigen
