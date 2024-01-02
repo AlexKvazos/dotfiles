@@ -45,7 +45,7 @@ alias gco='git checkout'
 alias grh='git reset --hard'
 
 # quick navigation
-alias notes='clear;cd ~/notes;l'
+alias notes='clear;cd ~/notes'
 alias dev='clear;cd ~/Developer'
 
 # vim
@@ -54,6 +54,8 @@ alias vim='nvim'
 # npm
 alias ni='npm install'
 alias na='npm add'
+alias nrd='npm run dev'
+alias nrb='npm run build'
 
 # shadcn/ui
 alias scn='npx shadcn-ui@latest add'
