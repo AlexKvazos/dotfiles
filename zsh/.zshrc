@@ -40,7 +40,7 @@ alias gco='git checkout'
 alias grh='git reset --hard'
 
 # quick navigation
-alias notes='clear;cd ~/notes'
+alias notes='clear;cd ~/Documents/notes'
 alias dev='clear;cd ~/Developer'
 
 # vim
