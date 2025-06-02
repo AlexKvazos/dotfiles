@@ -16,12 +16,6 @@ setopt HIST_FIND_NO_DUPS
 # change directory without cd
 setopt AUTO_CD
 
-# loads and initializes Zsh completion system.
-autoload -Uz compinit && compinit
-
-# enables case-insensitive matching in completion.
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
 ### ---- aliases --------------------------------------------
 
 # better ls
@@ -61,9 +55,6 @@ alias scn='npx shadcn-ui@latest add'
 source ~/.antigen/antigen.zsh
 
 # plugins
-# antigen theme spaceship-prompt/spaceship-prompt
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # apply changes
