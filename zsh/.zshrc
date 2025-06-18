@@ -61,3 +61,40 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
 export N_PREFIX="/Users/alex/.n"
+
+j() {
+  NOTES_DIR=~/Documents/notes
+  JOURNAL_DIR="$NOTES_DIR/01_journal"
+  TEMPLATE="$JOURNAL_DIR/_template.md"
+  TODAY=$(date +"%Y-%m-%d")
+  TARGET="$JOURNAL_DIR/$TODAY.md"
+
+  mkdir -p "$JOURNAL_DIR"
+
+  if [ ! -f "$TARGET" ]; then
+    sed "s/{{DATE}}/$TODAY/g" "$TEMPLATE" > "$TARGET"
+  fi
+
+  cursor "$TARGET"  
+}
+
+i() {
+  NOTES_DIR=~/Documents/notes
+  INBOX_DIR="$NOTES_DIR/02_inbox"
+  TEMPLATE="$INBOX_DIR/_template.md"   # optional
+  TIMESTAMP=$(date +"%Y-%m-%d-%H%M%S")
+  TARGET="$INBOX_DIR/$TIMESTAMP.md"
+
+  mkdir -p "$INBOX_DIR"
+
+  if [ ! -f "$TARGET" ]; then
+    if [ -f "$TEMPLATE" ]; then
+      sed "s/{{DATETIME}}/$TIMESTAMP/g" "$TEMPLATE" > "$TARGET"
+    else
+      echo "# INBOX $TIMESTAMP" > "$TARGET"
+    fi
+  fi
+
+  nvim "$TARGET"       # or: code "$TARGET" / open -a "Cursor" "$TARGET"
+}
+
